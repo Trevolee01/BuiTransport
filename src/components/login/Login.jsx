@@ -70,7 +70,7 @@ const Login = () => {
             <a href=''>Forgot Password?</a>
             
         </div>
-        <button type='submit'><Link to ='./Home'>Login</Link></button>
+        <button type='submit'><Link to ='/Login/Home'>Login</Link></button>
         <div className="register">
             <p>Don't have an account?<Link to= '/Signup'><a href=''>Signup</a></Link></p>
         </div>
