@@ -19,7 +19,7 @@ const Signup = () => {
     navigate('/Login')
   }
   return (
-    <div>
+    <div className="container">
       <div className="sur">
         <form onSubmit={handleSubmit}>
           <h1>Signup</h1>
@@ -47,7 +47,7 @@ const Signup = () => {
             />
             <MdEmail className="ico" />
           </div>
-
+              
           <div className="inputs">
             <input
               name="password"

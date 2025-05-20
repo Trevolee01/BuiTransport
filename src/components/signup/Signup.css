@@ -1,9 +1,11 @@
+
 .sur{
     width: 400px;
-    background-color: white;
+    background-color:aliceblue;
     backdrop-filter: blur(5px);
     color: white;
     padding: 30px;
+    border: 2px solid black;
     
 }
 .sur h1{
@@ -36,7 +38,7 @@
 .inputs .ico{
     position: fixed;
     left: 37px;
-    transform: translateY(50%);
+    transform: translateY(-150%);
     font-size: 15px;
     color: black;
 }
@@ -56,12 +58,14 @@
     height: 30px;
     border-radius: 40px;
     color: black;
+    background-color: thistle;
     border: none;
     font-size: 15px;
     cursor: pointer;
 }
 .sur button:hover{
     color: black;
+    background-color: blue;
 }
 .login{
     margin-top: 20px;
