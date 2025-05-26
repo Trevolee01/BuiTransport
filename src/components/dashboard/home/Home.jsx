@@ -10,13 +10,17 @@ const Home = () => {
   return (
     <div>
       <header className=" text-black p-4 bg-white rounded-[10px] block w-full">
-        <div>
+        <div className="flex justify-between items-center py-2 px-4">
           <h1 className="text-3xl font-bold text-center">
             Welcome to BUI Transport
           </h1>
+          <div className="flex items-center space-x-4">
+            <button className="px-3 py-1 text-xs font-medium rounded-full bg-purple-300 text-purple-800 cursor-pointer">Admin</button>
+
+          </div>
         </div>
       </header>
-      <main className="max-w-7xl mx-auto px-6 py-16">
+      <main className="max-w-7xl mx-auto px-15 py-13">
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
           <div className=" py-2 px-2 flex border-b border-gray-200">
             <button className="flex-1 py-2  text-center font-bold text-sm border-b-2 border-b-blue-700 text-blue-700 cursor-pointer">
