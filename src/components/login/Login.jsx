@@ -25,7 +25,7 @@ const Login = () => {
       input.email===logg.email && input.password === logg.password
     ){
       localStorage.setItem("Loggedin",true);
-      navigate('/')
+      navigate('/Home')
     }
     else if( input.email !=logg.email && input.password === logg.password){
       alert('Dont have account with this gmail. Please register!')
