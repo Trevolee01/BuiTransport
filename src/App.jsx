@@ -5,7 +5,6 @@ import Home from "./components/dashboard/home/Home"
 import Book from "./components/dashboard/book/Book"
 import Transport from "./components/dashboard/Transport/Transport"
 import Settings from "./components/dashboard/settings/Settings"
-
 import { BrowserRouter, Routes,Route } from "react-router-dom"
 import './index.css'
 function App() {

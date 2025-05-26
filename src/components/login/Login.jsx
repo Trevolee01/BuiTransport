@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     const userString =localStorage.getItem('user');
     if(!userString){
-      alert('No use found.Please register first')
+      alert('No user found.Please register first')
     }
     const logg = JSON.parse (userString);
     if (!logg){
@@ -66,7 +66,6 @@ const Login = () => {
         <FaLock className="icon" />
       </div>
         <div className='remember'>
-            <label><input type='checkbox'/>Remember Me</label>
             <a href=''>Forgot Password?</a>
             
         </div>
