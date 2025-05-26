@@ -19,7 +19,7 @@ Hello transport
 <div className="max-w-7xl mx-auto fixed bottom-0 left-0 right-0 bg-white border-gray-200 px-10 py-2 ">
               <div className=" justify-between flex ">
                 <a
-                  href="Login/Home"
+                  href="/Home"
                   className="flex flex-col items-center justify-between py-3 px-3 cursor-pointer"
                 >
                   <i className="text-gray-400 text-xl">

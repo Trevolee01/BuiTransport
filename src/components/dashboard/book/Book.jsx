@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import { TiHome } from "react-icons/ti";
 import { FaCar } from "react-icons/fa";
 import { IoIosPeople } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
 
+
 const Book = () => {
+  const currentDate  = new Date().toLocaleDateString();
+const currentTime = new Date().toLocaleTimeString();
+
   return (
     <div>
       <header className=" text-black p-4 bg-white rounded-[10px] block w-full">
@@ -22,16 +26,16 @@ const Book = () => {
           <form className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label type="datetime-local">
                   Date
                 </label>
-                <div className="w-full py-2 border-0 bg-gray-100 text-gray-900"></div>
+                <div className="w-full py-2 border-0 bg-gray-100 text-gray-900"> {currentDate.toLocaleString()}</div>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Time
                 </label>
-                <div className="w-full py-2 border-0 bg-gray-100 text-gray-900"></div>
+                <div className="w-full py-2 border-0 bg-gray-100 text-gray-900">{currentTime.toLocaleString()}</div>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -74,7 +78,7 @@ const Book = () => {
       <div className="max-w-7xl mx-auto fixed bottom-0 left-0 right-0 bg-white border-gray-200 px-10 py-2 ">
         <div className=" justify-between flex ">
           <a
-            href="Login/Home"
+            href="/Home"
             className="flex flex-col items-center justify-between py-3 px-3 cursor-pointer"
           >
             <i className="text-gray-400 text-xl">
@@ -83,7 +87,7 @@ const Book = () => {
             <span className="text-gray-400 text-xl">Home</span>
           </a>
           <a
-            href="/Book"
+            href=""
             className=" flex flex-col items-center py-3 px-3 cursor-pointer"
           >
             <i className="text-gray-400 text-xl">
