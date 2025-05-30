@@ -7,18 +7,31 @@ import Transport from "./components/dashboard/Transport/Transport";
 import Settings from "./components/dashboard/settings/Settings";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
+import { useEffect } from "react";
+
 function App() {
+  useEffect(() => {
+    const theme = localStorage.getItem("theme");
+    if (theme) {
+      document.body.setAttribute("data-theme", theme);
+    } else {
+      document.body.setAttribute("data-theme", "light");
+    }
+  }, []);
+
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/Signup" element={<Signup />}></Route>
-          <Route path="/Login" element={<Login />}></Route>
-          <Route path="/Home" element={<Home />}></Route>
-          <Route path="/" element={<ProtectRoute />}></Route>
-          <Route path="/Book" element={<Book />}></Route>
-          <Route path="/Transport" element={<Transport />}></Route>
-          <Route path="/Settings" element={<Settings />}></Route>
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route element={<ProtectRoute />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/book" element={<Book />} />
+            <Route path="/transport" element={<Transport />} />
+            <Route path="/settings" element={<Settings />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>

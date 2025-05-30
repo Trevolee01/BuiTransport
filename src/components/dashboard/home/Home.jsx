@@ -6,14 +6,16 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { IoIosPeople } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
 
+
 const Home = () => {
   return (
     <div>
-      <header className=" text-black p-4 bg-white rounded-[10px] block w-full">
+      <header className=" text-black p-4 bg-blue-900 rounded-[10px] block w-full">
         <div className="flex justify-between items-center py-2 px-4">
           <h1 className="text-3xl font-bold text-center">
             Welcome to BUI Transport
           </h1>
+         
           <div className="flex items-center space-x-4">
             <button className="px-3 py-1 text-xs font-medium rounded-full bg-purple-300 text-purple-800 cursor-pointer">Admin</button>
 
@@ -21,8 +23,8 @@ const Home = () => {
         </div>
       </header>
       <main className="max-w-7xl mx-auto px-15 py-13">
-        <div className="bg-white rounded-xl shadow-md overflow-hidden">
-          <div className=" py-2 px-2 flex border-b border-gray-200">
+        <div className="bg--body-bg   rounded-xl overflow-hidden">
+          <div className=" py-2 px-2 flex border-gray-200">
             <button className="flex-1 py-2  text-center font-bold text-sm border-b-2 border-b-blue-700 text-blue-700 cursor-pointer">
               Active Booking
             </button>
@@ -36,17 +38,17 @@ const Home = () => {
               <i className=" text-gray-400 items-center text-5xl mb-4">
                 <FaCalendarAlt />
               </i>
-              <p className="text-gray-700 text-lg font-medium">
+              <p className=" text-lg font-medium">
                 No active bookings at the moment.
               </p>
-             <Link to ='/Book'><button className="bg-blue-500 text-white px-4 py-2 rounded-md mt-4 hover:bg-blue-600 transition duration-200">
+             <Link to ='/Book'><button className="bg-blue-500 font-bold px-4 py-2 rounded-md mt-4 hover:bg-blue-600 transition duration-200">
                 Book a Ride
               </button></Link>
             </div>
           </div>
         </div>
       </main>
-      <div className="max-w-7xl mx-auto fixed bottom-0 left-0 right-0 bg-white border-gray-200 px-10 py-2 ">
+      <div className="max-w-7xl mx-auto fixed bottom-0 left-0 right-0 bg-blue-800 border-gray-200 px-10 py-2 ">
         <div className=" justify-between flex ">
           <a
             href=""
