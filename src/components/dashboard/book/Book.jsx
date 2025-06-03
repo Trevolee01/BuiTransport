@@ -10,16 +10,12 @@ const Book = () => {
 
   return (
     <div>
-      <header className=" text-black p-4 bg-blue-900 rounded-[10px] block w-full">
+      <header className=" text-white p-4 bg-blue-900 rounded-[10px] block w-full">
         <div className="flex justify-between items-center py-2 px-4">
           <h1 className="text-3xl font-bold text-center">
             Welcome to BUI Transport
           </h1>
-          <div className="flex items-center space-x-4">
-            <button className="px-3 py-1 text-xs font-medium rounded-full bg-purple-300 text-purple-800 cursor-pointer">
-              Admin
-            </button>
-          </div>
+        
         </div>
       </header>
       <main className="max-w-7xl mx-auto px-15 py-13">
@@ -111,7 +107,7 @@ const Book = () => {
             <i className="text-gray-400 text-xl">
               <IoIosPeople />
             </i>
-            <span className="text-gray-400 text-xl">Transport Organizers</span>
+            <span className="text-gray-400 text-xl">Drivers</span>
           </a>
           <a
             href="/Settings"

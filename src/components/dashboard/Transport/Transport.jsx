@@ -32,29 +32,24 @@ const Transport = () => {
 
   return (
     <div>
-      <header className=" text-black p-4 bg-blue-900 rounded-[10px] block w-full">
+      <header className=" text-white p-4 bg-blue-900 rounded-[10px] block w-full">
         <div className="flex justify-between items-center py-2 px-4">
           <h1 className="text-3xl font-bold text-center">
             Welcome to BUI Transport
           </h1>
-          <div className="flex items-center space-x-4">
-            <button className="px-3 py-1 text-xs font-medium rounded-full bg-purple-300 text-purple-800 cursor-pointer">
-              Admin
-            </button>
-          </div>
         </div>
       </header>
       <main className="max-w-7xl mx-auto mt-4 p-4">
         <div className="shadow-md rounded-lg p-6">
           <div className="p-6">
-            <h2 className="text-2xl font-semibold mb-4">Transport</h2>
+            <h2 className="text-2xl font-semibold mb-4">Drivers</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="flex b border-gray-700 border rounded-xl shadow-sm overflow-hidden">
                 <div className="w-1/3 p-6">
                   <div className="w-24 h-24 mx-auto rounded-full overflow-hidden">
                     <img
                       src={JJImage}
-                      alt="Profile"
+                      alt="profile"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -232,7 +227,7 @@ const Transport = () => {
             <i className="text-gray-400 text-xl">
               <IoIosPeople />
             </i>
-            <span className="text-gray-400 text-xl">Transport Organizers</span>
+            <span className="text-gray-400 text-xl">Drivers</span>
           </a>
           <a
             href="/Settings"

@@ -9,6 +9,7 @@ const Login = () => {
   const [input, setInput] = useState({
     email: '',
     password: '',
+    role: 'student' 
   });
 
   const handleLogin = (e) => {
@@ -26,8 +27,23 @@ const Login = () => {
     }
 
     if (input.email === logg.email && input.password === logg.password) {
-      localStorage.setItem("isLoggedIn", "true"); // Changed to match ProtectRoute
-      navigate('/home');
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("userRole", input.role);
+      
+      
+      switch(input.role) {
+        case 'student':
+          navigate('/Home');
+          break;
+        case 'admin':
+          navigate('/AdminHome');
+          break;
+        case 'transport organizer':
+          navigate('/TransHome');
+          break;
+        default:
+          navigate('/Home');
+      }
     }
     else if (input.email !== logg.email && input.password === logg.password) {
       alert('No account found with this email. Please register!');
@@ -69,6 +85,21 @@ const Login = () => {
               required
             />
             <FaLock className="icon" />
+          </div>
+          <div className="input">
+            <select
+              name="role"
+              value={input.role}
+              onChange={(e) =>
+                setInput({ ...input, [e.target.name]: e.target.value })
+              }
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-white bg-transparent"
+              required
+            >
+              <option value="student" className="text-black">Student</option>
+              <option value="admin" className="text-black">Admin</option>
+              <option value="transport organizer" className="text-black">Transport Organizer</option>
+            </select>
           </div>
           <div className='remember'>
             <a href=''>Forgot Password?</a>
