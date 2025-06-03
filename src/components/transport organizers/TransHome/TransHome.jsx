@@ -165,7 +165,7 @@ const TransHome = () => {
         <div className="justify-between flex">
           <a
             href=""
-            className="flex flex-col items-center justify-between py-3 px-3 cursor-pointer"
+            className="flex flex-col items-center justify-between py-px-3 cursor-pointer"
           >
             <i className="text-gray-400 text-xl">
               <SlPeople />
