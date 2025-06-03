@@ -241,5 +241,3 @@ const TransHome = () => {
 };
 
 export default TransHome;
-
-export default TransHome
