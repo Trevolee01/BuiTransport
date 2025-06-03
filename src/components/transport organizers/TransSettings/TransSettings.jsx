@@ -1,38 +1,37 @@
 import React, { useState, useEffect } from "react";
-import { TiHome } from "react-icons/ti";
-import Switch from "./switch/Switch";
-import { FaCar, FaUserCircle } from "react-icons/fa";
-import { IoIosPeople } from "react-icons/io";
+import Switch from "../../dashboard/settings/switch/Switch";
 import { IoSettingsOutline } from "react-icons/io5";
-import { getUserData, updateUserData, saveUserPhoto, removePhoto } from "../../service/userService";
-import { toast } from 'react-toastify';
+import {getUserData,updateUserData,saveUserPhoto,removePhoto,} from "../../service/userService";
+import { toast } from "react-toastify";
+import { SlPeople } from "react-icons/sl";
+import { FaUserCircle } from "react-icons/fa";
 import { Await, Link } from "react-router-dom";
 
-const Settings = () => {
+const AdminSettings = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     phoneNumber: "",
     language: "english",
-    photoUrl: null
+    photoUrl: null,
   });
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const userData = getUserData();
     if (userData) {
-      setFormData(prevData => ({
+      setFormData((prevData) => ({
         ...prevData,
-        ...userData
+        ...userData,
       }));
     }
   }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevData => ({
+    setFormData((prevData) => ({
       ...prevData,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -42,16 +41,16 @@ const Settings = () => {
 
     try {
       setIsLoading(true);
-      const result =  await saveUserPhoto(file);
+      const result = await saveUserPhoto(file);
       if (result.success) {
-        setFormData(prevData => ({
+        setFormData((prevData) => ({
           ...prevData,
-          photoUrl: result.photoUrl
+          photoUrl: result.photoUrl,
         }));
-        toast.success('Photo updated successfully!');
+        toast.success("Photo updated successfully!");
       }
     } catch (error) {
-      toast.error('Failed to update photo. Please try again.');
+      toast.error("Failed to update photo. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -62,14 +61,14 @@ const Settings = () => {
       setIsLoading(true);
       const result = await removePhoto();
       if (result.success) {
-        setFormData(prevData => ({
+        setFormData((prevData) => ({
           ...prevData,
-          photoUrl: null
+          photoUrl: null,
         }));
-        toast.success('Photo removed successfully!');
+        toast.success("Photo removed successfully!");
       }
     } catch (error) {
-      toast.error('Failed to remove photo. Please try again.');
+      toast.error("Failed to remove photo. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -82,12 +81,12 @@ const Settings = () => {
     try {
       const result = await updateUserData(formData);
       if (result.success) {
-        toast.success('Settings updated successfully!');
+        toast.success("Settings updated successfully!");
       } else {
-        toast.error('Failed to update settings. Please try again.');
+        toast.error("Failed to update settings. Please try again.");
       }
     } catch (error) {
-      toast.error('An error occurred. Please try again.');
+      toast.error("An error occurred. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -112,9 +111,9 @@ const Settings = () => {
               <div className="flex flex-col items-center">
                 <div className="w-32 h-32 rounded-full overflow-hidden mb-4 bg-gray-100 flex items-center justify-center">
                   {formData.photoUrl ? (
-                    <img 
-                      src={formData.photoUrl} 
-                      alt="Profile" 
+                    <img
+                      src={formData.photoUrl}
+                      alt="Profile"
                       className="w-full h-full object-cover"
                     />
                   ) : (
@@ -123,7 +122,7 @@ const Settings = () => {
                 </div>
                 <div className="flex space-x-2">
                   <label className="px-4 py-2 border border-gray-300 hover:bg-gray-50 rounded-lg text-sm font-medium cursor-pointer">
-                    {isLoading ? 'Uploading...' : 'Change Photo'}
+                    {isLoading ? "Uploading..." : "Change Photo"}
                     <input
                       type="file"
                       className="hidden"
@@ -138,7 +137,7 @@ const Settings = () => {
                       disabled={isLoading}
                       className="px-4 py-2 border border-red-300 text-red-600 hover:bg-red-50 rounded-lg text-sm font-medium cursor-pointer disabled:opacity-50"
                     >
-                      {isLoading ? 'Removing...' : 'Remove Photo'}
+                      {isLoading ? "Removing..." : "Remove Photo"}
                     </button>
                   )}
                 </div>
@@ -196,9 +195,15 @@ const Settings = () => {
                       onChange={handleInputChange}
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
-                      <option value="english" className="text-black">English</option>
-                      <option value="french" className="text-black">French</option>
-                      <option value="spanish" className="text-black">Spanish</option>
+                      <option value="english" className="text-black">
+                        English
+                      </option>
+                      <option value="french" className="text-black">
+                        French
+                      </option>
+                      <option value="spanish" className="text-black">
+                        Spanish
+                      </option>
                     </select>
                   </div>
                 </div>
@@ -216,17 +221,18 @@ const Settings = () => {
                     disabled={isLoading}
                     className="bg-blue-500 px-4 py-2 border border-blue-300 hover:bg-blue-100 rounded-lg text-sm font-medium cursor-pointer disabled:opacity-50"
                   >
-                    {isLoading ? 'Saving...' : 'Save Changes'}
+                    {isLoading ? "Saving..." : "Save Changes"}
                   </button>
                 </div>
                 <div className="flex justify-end space-x-4">
-                  <Link to={"/"}><button
-                    type="submit"
-          
-                    className="bg-red-500 px-4 py-2 border border-red-300 hover:bg-red-100 rounded-lg text-sm font-medium cursor-pointer disabled:opacity-50"
-                  >
-                  Logout
-                  </button></Link>
+                  <Link to={"/"}>
+                    <button
+                      type="submit"
+                      className="bg-red-500 px-4 py-2 border border-red-300 hover:bg-red-100 rounded-lg text-sm font-medium cursor-pointer disabled:opacity-50"
+                    >
+                      Logout
+                    </button>
+                  </Link>
                 </div>
               </form>
             </div>
@@ -236,34 +242,16 @@ const Settings = () => {
       <div className="max-w-7xl mx-auto fixed bottom-0 left-0 right-0 bg-blue-800 border-gray-200 px-10 py-2">
         <div className="justify-between flex">
           <a
-            href="/Home"
+            href="/TransHome"
             className="flex flex-col items-center justify-between py-3 px-3 cursor-pointer"
           >
             <i className="text-gray-400 text-xl">
-              <TiHome />
+              <SlPeople />
             </i>
-            <span className="text-gray-400 text-xl">Home</span>
+            <span className="text-gray-400 text-xl">Transport Organizers</span>
           </a>
           <a
-            href="/Book"
-            className="flex flex-col items-center py-3 px-3 cursor-pointer"
-          >
-            <i className="text-gray-400 text-xl">
-              <FaCar />
-            </i>
-            <span className="text-gray-400 text-xl">Book a Ride</span>
-          </a>
-          <a
-            href="/Transport"
-            className="flex flex-col items-center py-3 px-3 cursor-pointer"
-          >
-            <i className="text-gray-400 text-xl">
-              <IoIosPeople />
-            </i>
-            <span className="text-gray-400 text-xl">Drivers</span>
-          </a>
-          <a
-            href="/Settings"
+            href="/AdminSettings"
             className="flex flex-col items-center py-3 px-3 cursor-pointer"
           >
             <i className="text-gray-400 text-xl">
@@ -277,4 +265,4 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+export default AdminSettings;

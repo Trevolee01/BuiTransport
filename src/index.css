@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 body{
   margin: 0px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -9,5 +10,18 @@ body{
   height: 100vh;
   justify-content: center;
   
-  background: rgb(212, 209, 209);
+
+  --body-bg:rgb(245, 233, 233);
+  --primary: #4a90e2;
+  background-color: var(--body-bg);
+}
+
+[data-theme="dark"] {
+  background-color: #181818;
+  color: #fff;
+}
+
+[data-theme="light"] {
+  background-color: white;
+  color: #181818;
 }
